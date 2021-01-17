@@ -109,3 +109,7 @@ jest.config.jsファイルをルートディレクトリに作成します。
 # 参考にした記事
 
 [webpackとBabelの基本を理解する(1) ―webpack編―](https://qiita.com/koedamon/items/3e64612d22f3473f36a4)
+[webpackとBabelの基本を理解する(2) ―Babel編―](https://qiita.com/koedamon/items/92c986456e4b9e845acd)
+[webpackとBabelの基本を理解する(3) ―webpackとBabel編―](https://qiita.com/koedamon/items/6cf2201be78c3d79516d)
+[yarnの使いかた](https://qiita.com/senou/items/d939601e32c0005ebfe3)
+[Babel 7でTypeScriptをトランスパイルしつつ型チェックをする 〜webpack 4 + Babel 7 + TypeScript + TypeScript EsLint + Prettierの開発環境を構築する〜](https://qiita.com/soarflat/items/d583356e46250a529ed5)
