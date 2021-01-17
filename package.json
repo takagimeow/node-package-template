@@ -5,12 +5,13 @@
   "license": "MIT",
   "scripts": {
     "type-check": "tsc --noEmit",
-    "build": "yarn run type-check && npx webpack --config webpack.config.js",
-    "build:watch": "yarn run type-check && npx webpack --watch --config webpack.config.js",
+    "build": "yarn run type-check && yarn run test && npx webpack --config webpack.config.js",
+    "build:watch": "yarn run type-check && yarn run test && npx webpack --watch --config webpack.config.js",
     "lint": "eslint . --ext ts",
     "lint:fix": "eslint . --ext ts --fix",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "start": "node ./dist"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
