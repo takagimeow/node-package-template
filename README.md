@@ -1,4 +1,4 @@
-# Package Template
+# NPT ~ Node Package Template ~
 
 ## 準備
 
