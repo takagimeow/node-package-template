@@ -5,3 +5,8 @@ docs
 __tests__/typescript
 
 coverage
+.env
+*.db
+prisma/migrations
+prisma/*.prisma
+*.log

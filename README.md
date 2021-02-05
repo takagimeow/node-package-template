@@ -60,3 +60,33 @@ $ yarn run lint:fix
 ```bash
 $ yarn run start
 ```
+
+# How to use Prisma
+
+## Step 1. Create project setup
+
+```bash
+npx prisma init
+```
+
+## Step 2. Create daatabase tables with Prisma Migrate
+
+```bash
+yarn run prisma:migrate
+```
+
+## Step 3. Generate a version of Prisma Client that is tailored to created models
+
+```bash
+yarn run prisma:generate
+```
+
+# API TEST
+
+## CURL
+
+### POST
+
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"name":"test", "email": "test@exmaple.com", "posts": { "title": "テスト" }, "profile": { "bio": "テスト" } }' localhost:3000/api
+```
