@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "type-check": "tsc --noEmit",
-    "build": "yarn run type-check && yarn run test && npx webpack --config webpack.config.js",
+    "type-dts": "tsc --emitDeclarationOnly",
+    "build": "yarn run type-check && yarn run test && yarn run type-dts && npx webpack --config webpack.config.js",
     "build:watch": "yarn run type-check && yarn run test && npx webpack --watch --config webpack.config.js",
     "lint": "eslint . --ext ts",
     "lint:fix": "eslint . --ext ts --fix",
