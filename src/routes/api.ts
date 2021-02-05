@@ -11,8 +11,8 @@ const prisma = new PrismaClient();
 /* GET home page. */
 apiRouter.get('/', async (req, res) => {
   const allUsers = await prisma.user.findMany();
-  console.log('allUsers: ', allUsers);
-  res.status(200).send(allUsers);
+  await prisma.$disconnect();
+  return res.status(200).send(allUsers);
   // res.status(200).send('HELLO WORLD 2nd');
 });
 
@@ -49,6 +49,7 @@ apiRouter.post('/', async (req, res, next) => {
     const err = new Error('Error is occured');
     return next(err);
   }
+  await prisma.$disconnect();
   return res.status(201).json({
     status: 'okay',
   });

@@ -3,3 +3,5 @@ babel.config.js
 webpack.*.js
 *.config.*
 tsconfig.json
+
+/__tests__
