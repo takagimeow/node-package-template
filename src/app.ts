@@ -25,6 +25,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
 app.use('/users', usersRouter);
+app.get('/liveness_check', (req, res) => {
+  res.status(200).send();
+});
+app.get('/readiness_check', (req, res) => {
+  res.status(200).send();
+});
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
