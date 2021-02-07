@@ -5,3 +5,4 @@ coverage
 dist
 docs
 *.log
+cloud_sql_proxy

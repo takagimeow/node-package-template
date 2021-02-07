@@ -10,13 +10,13 @@ COPY package*.json ./
 
 RUN yarn install --frozen-lockfile
 
-COPY . .
+COPY . .  
 
-RUN yarn run prisma:generate
-RUN yarn run prisma:generate
+RUN wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy \
+&& chmod +x cloud_sql_proxy
 
-RUN yarn run build
+RUN chmod +x ./commands/start.sh
 
 EXPOSE 3000
 
-CMD ["yarn", "run", "start"]
+CMD ["./commands/start.sh"]

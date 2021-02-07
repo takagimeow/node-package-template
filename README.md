@@ -138,6 +138,12 @@ docker image ls
 
 [App Engine Scaling Config](https://qiita.com/sinmetal/items/017e7aa395ff459fca7c)
 
+カスタムランタイム
+
+[カスタム ランタイムの構築](https://cloud.google.com/appengine/docs/flexible/custom-runtimes/build?hl=ja)
+
+[Node.jsからCloud SQL（MySQL）を操作する方法](https://developer.yukimonkey.com/article/20200213/)
+
 ## gcloudコマンドをインストールする
 
 ```bash
@@ -209,4 +215,44 @@ gcloud app logs tail -s default
 
 ```bash
 gcloud app browse
+```
+
+# サービスアカウントを作成する
+
+コンソール上でサービスアカウントを作成する。
+
+[Proxy Docker イメージを使用して MySQL クライアントを接続する](https://cloud.google.com/sql/docs/mysql/connect-docker?hl=ja)
+
+# Cloud SQLインスタンスの作成
+
+mysql データベースが作成される
+
+```bash
+gcloud sql instances create [YOUR_INSTANCE_NAME] --tier=db-n1-standard-1 --region=asia-northeast1 
+```
+
+インスタンスを確認する
+
+```bash
+gcloud sql instances describe [YOUR_INSTANCE_NAME]
+```
+
+プロキシを使用して外部アプリケーションから接続するためにCloud SQL Proxyをインストールする
+
+```bash
+wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
+```
+
+権限を付与する
+
+```bash
+chmod +x cloud_sql_proxy
+```
+
+プロキシを開始する（開発用）
+
+INSTANCE_CONNECTION_NAMEの部分は、describeサブコマンドを実行したときに表示されるconnectionNameフィールドの値を参照する。
+
+```bash
+./cloud_sql_proxy -instances=<INSTANCE_CONNECTION_NAME>=tcp:3306 -credential_file=./認証情報.json
 ```

@@ -9,3 +9,5 @@ LICENSE
 README.md
 webpack.config.js
 *.log
+
+cloud_sql_proxy
