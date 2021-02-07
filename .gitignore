@@ -10,3 +10,7 @@ coverage
 prisma/migrations
 prisma/*.prisma
 *.log
+app.flex.yaml
+cloud_sql_proxy
+*express-api*.json
+start.flex.sh
