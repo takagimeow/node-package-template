@@ -1,0 +1,11 @@
+.github
+coverage
+dist
+docs
+node_modules
+
+.env.sample
+LICENSE
+README.md
+webpack.config.js
+*.log
