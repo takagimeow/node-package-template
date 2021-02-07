@@ -60,3 +60,68 @@ $ yarn run lint:fix
 ```bash
 $ yarn run start
 ```
+
+# How to use Prisma
+
+## Step 1. Create project setup
+
+```bash
+npx prisma init
+```
+
+## Step 2. Create daatabase tables with Prisma Migrate
+
+```bash
+yarn run prisma:migrate
+```
+
+## Step 3. Generate a version of Prisma Client that is tailored to created models
+
+```bash
+yarn run prisma:generate
+```
+
+# API TEST
+
+## CURL
+
+### POST
+
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"name":"test", "email": "test@exmaple.com", "posts": { "title": "テスト" }, "profile": { "bio": "テスト" } }' localhost:3000/api
+```
+
+# DOCKER
+
+## BUILD
+
+```bash
+docker build . -t expressimage
+```
+
+## RUN
+
+```bash
+docker run -dit --name expresscontainer -p 8080:3000 expressimage
+```
+
+## DELETE
+
+```bash
+docker stop expresscontainer
+docker rm expresscontainer
+```
+
+## SAVE
+
+```bash
+docker save -o saved.tar expressimage
+ls -al saved.tar
+```
+
+## LOAD
+
+```bash
+docker load -i saved.tar
+docker image ls
+```
